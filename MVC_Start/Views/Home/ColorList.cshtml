@@ -1,0 +1,33 @@
+﻿@model FavoriteColor
+
+@{
+    ViewData["Title"] = "Favorite Colors";
+}
+
+<p>
+
+</p>
+<a asp-controller="Home"
+   asp-action="Index"
+   asp-route-id="12">
+    Go to Home page
+</a>
+
+
+<h1>@ViewData["Title"]</h1>
+
+
+<p>Hello friend. Please give a list of your favorite colors.</p>
+
+<p>First: @Model.FirstColor</p>
+<p>Second: @Model.SecondColor</p>
+<p>Third: @Model.ThirdColor</p>
+
+
+<form asp-controller="Home" asp-action="ColorList" method="post">
+    <p>First: <input asp-for="FirstColor" /></p>
+    <p>Second: <input asp-for="SecondColor" /></p>
+    <p>Third: <input asp-for="ThirdColor" /></p>
+
+    <button type="submit">Submit</button>
+</form>
